@@ -1,0 +1,24 @@
+﻿@inject IJSRuntime JSRuntime
+@inherits InputBase<string>
+<input id="@guid"  @attributes="AdditionalAttributes" class="@CssClass" value="@CurrentValue" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" /> 
+@code {
+    Guid guid { get; set; }
+    protected override void OnInitialized()
+    {
+        guid = Guid.NewGuid();
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("masks",guid.ToString());
+        }
+    }
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        result = value;
+        validationErrorMessage = null;
+        return true;
+    }
+}
+

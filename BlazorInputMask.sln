@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorInputMask", "BlazorInputMask\BlazorInputMask.csproj", "{6339FAD0-36D6-4E37-BF49-5F93B9D45BAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6339FAD0-36D6-4E37-BF49-5F93B9D45BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6339FAD0-36D6-4E37-BF49-5F93B9D45BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6339FAD0-36D6-4E37-BF49-5F93B9D45BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6339FAD0-36D6-4E37-BF49-5F93B9D45BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C186864-A66B-4DE2-823C-79F0AF5AA120}
+	EndGlobalSection
+EndGlobal

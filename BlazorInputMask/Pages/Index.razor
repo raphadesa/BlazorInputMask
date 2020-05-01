@@ -1,0 +1,41 @@
+﻿@page "/"
+<h1>Custom validation</h1>
+@if (!wasSubmitted)
+{
+
+    <EditForm Model="user" OnValidSubmit="Submit">
+
+        <div class="form-group">
+            <label>First Name:</label>
+            <InputText @bind-Value="user.Name" class="form-control" placeholder="First Name" />
+        </div>
+
+        <div class="form-group">
+            <label>French Phone no:</label>
+            <InputTelephone @bind-Value="@user.Telephone" class="form-control" placeholder="Phone No" />
+        </div>
+        <button type="submit" class="btn btn-primary">OK</button>
+        <ValidationSummary />
+        <DataAnnotationsValidator />
+    </EditForm>
+}
+else
+{
+    <div class="alert alert-success" role="alert">
+        Form was submitted successfully !
+    </div>
+}
+
+
+@code{
+
+    private User user = new User();
+    private bool wasSubmitted { get; set; }
+
+    private void Submit()
+    {
+        wasSubmitted = true;
+    }
+
+
+}
