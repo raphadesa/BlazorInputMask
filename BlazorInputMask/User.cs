@@ -11,7 +11,7 @@ namespace BlazorInputMask
         [Required]
         public string Name { get; set; }
         [Required]
-        [RegularExpression(@"^[0][1-9]([.][0-9][0-9]){4}", ErrorMessage="Numéro de téléphone incorrect!")]
+        [RegularExpression(@"^[0][1-9]([.][0-9][0-9]){4}", ErrorMessage="Incorrect phone number !")]
         public string Telephone { get; set; }
 
     }
