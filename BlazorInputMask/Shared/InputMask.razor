@@ -11,7 +11,7 @@
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("masks",guid.ToString());
+            await JSRuntime.InvokeVoidAsync("masks",guid.ToString(), AdditionalAttributes["data-mask"].ToString());
         }
     }
     protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
