@@ -1,4 +1,4 @@
-#Blazor Input Mask
+#Blazor Input Mask#
 
 Blazor Input Mask (based on https://imask.js.org/)
 
