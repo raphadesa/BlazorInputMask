@@ -12,6 +12,4 @@ In your _Host.cshtml or Index.html file:
 
 <script src="_content/BlazorInputMask/Main.js"></script>
 
-
 <script src="_content/BlazorInputMask/IMask.js"></script>
-
