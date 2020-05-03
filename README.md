@@ -1,5 +1,9 @@
 Blazor Input Mask
 
+Nuget Package : 
+
+Install-Package BlazorInputMask
+
 Blazor Input Mask (based on https://imask.js.org/)
 
 Use like that:
@@ -10,6 +14,6 @@ Use like that:
 
 In your _Host.cshtml or Index.html file:
 
-<script src="_content/BlazorInputMask/Main.js"></script>
+<script src="_content/BlazorInputMask/Main.js"></script><br/>
 
 <script src="_content/BlazorInputMask/IMask.js"></script>
