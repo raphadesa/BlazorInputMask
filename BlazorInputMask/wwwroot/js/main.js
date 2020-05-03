@@ -1,5 +1,5 @@
-﻿window.masks = (id,mask) => {
-    var phoneMask = IMask(
+﻿window.mask = (id,mask) => {
+    var customMask = IMask(
         document.getElementById(id), {
         mask: mask
     });
