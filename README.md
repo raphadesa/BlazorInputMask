@@ -1,6 +1,6 @@
 Blazor Input Mask
 
-![](https://71dhfa.am.files.1drv.com/y4pCpNe1-WEiJFwGOiSj9colrnZu4uukGTNbj6eMFio-gx2bqkIXXGEG33YI6293wCMCN0PsREO0Li6OyIelviyWjvmWw6jMLHiH56D77qQghH3NZzS1ajT0pClMCGF39EqIR8YnY6dj1-wg6D-4hX32px6UNk9_I9Esv3aNK1zE9kiv-xZjr_Kq77EyWUmrtBXNoDR--pv7jBgK9UXSyJXWg/BlazorInputMask.gif&psid=1)
+![](https://71dhfa.am.files.1drv.com/y4mg_oke1rtEzv6OK0aeJHVm9oiTMPcv9SdNA2wSo7ppyzfpT_809MDNljRRP0NUNIAd0uTfkOPhLN8OP2FitMwxV2QoaYEcku1LIRKReqj5gCEQXfCqHPvzEM5z-URuqngkwnV9P6JwLEpO_XA5CBj_yLUk9qcCjjHcYOb50i-QiO2s7M8fAAqf0_MM8HlwBbJQ5rB3YDpLVrvcf47Z7Td0g/BlazorInputMask.gif?psid=1)
 
 Nuget Package : 
 
