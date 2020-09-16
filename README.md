@@ -19,3 +19,9 @@ In your _Host.cshtml or Index.html file:
 <script src="_content/BlazorInputMask/Main.js"></script><br/>
 
 <script src="_content/BlazorInputMask/IMask.js"></script>
+
+You can also have the possibility to set an id to the mask, and also retrieve the unmasked value.
+
+Additional help in the demo code here : 
+
+https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
