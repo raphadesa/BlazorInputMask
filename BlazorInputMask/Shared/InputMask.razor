@@ -1,9 +1,11 @@
 ﻿@inject IJSRuntime JSRuntime
 @inherits InputBase<string>
-<input id="@id" @attributes="AdditionalAttributes" class="@CssClass" value="@CurrentValue" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" /> 
+<input id="@id" @attributes="AdditionalAttributes" class="@CssClass" value="@CurrentValue" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" />
 @code {
     [Parameter]
     public string id { get; set; }
+    [Parameter]
+    public string rawValue { get; set; }
     protected override void OnInitialized()
     {
         if (string.IsNullOrEmpty(id))
@@ -13,7 +15,8 @@
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("mask",id, AdditionalAttributes["data-mask"].ToString());
+            await JSRuntime.InvokeVoidAsync("mask", id, AdditionalAttributes["data-mask"].ToString(), DotNetObjectReference.Create(this));
+
         }
     }
     protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
@@ -23,5 +26,16 @@
         return true;
     }
 
+    [JSInvokable]
+    public void returnUnmaskedValue(string value)
+    {
+        rawValue = value;
+    }
 }
+
+
+
+
+
+
 
