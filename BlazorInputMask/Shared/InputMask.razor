@@ -1,20 +1,12 @@
 ﻿@inject IJSRuntime JSRuntime
 @inherits InputBase<string>
-@if (validateOnKeyPress)
-{
-<input id="@id" @attributes="AdditionalAttributes" class="@CssClass" value="@CurrentValue" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" />
-}
-else
-{
 <input id="@id" @attributes="AdditionalAttributes" class="@CssClass" @bind="CurrentValueAsString" />
-}
+
 @code {
     [Parameter]
     public string id { get; set; }
     [Parameter]
-    public string rawValue { get; set; }
-    [Parameter]
-    public bool validateOnKeyPress { get; set; } = true;
+    public string rawValue { get; set; }    
     protected override void OnInitialized()
     {
         if (string.IsNullOrEmpty(id))
