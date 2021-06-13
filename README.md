@@ -28,7 +28,7 @@ Additional help in the demo code here :
 
 https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
 
-06-13-21 : New parameter added: isRegEx
+06-13-2021 : New parameter added: isRegEx
                                                
 Usage :
                                                
