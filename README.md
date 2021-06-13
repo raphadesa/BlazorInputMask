@@ -28,8 +28,8 @@ Additional help in the demo code here :
 
 https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
 
-06-13-2021 : New parameter added: isRegEx
+06-13-2021 : RegEx support
                                                
-Usage :
+Usage : (RegEx must start and end with a slash '/')
                                                
-<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="^\d+$" isRegEx="true" placeholder="Phone No" />
+<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="/^\d+$/" placeholder="Phone No" />
