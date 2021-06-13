@@ -29,3 +29,7 @@ Additional help in the demo code here :
 https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
 
 06-13-21 : New parameter added: isRegEx
+                                               
+Usage :
+                                               
+<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="^\d+$" isRegEx="true" placeholder="Phone No" />
