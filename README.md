@@ -27,3 +27,5 @@ You can also have the possibility to set an id to the mask (optional), and also 
 Additional help in the demo code here : 
 
 https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
+
+06-13-21 : New parameter added: isRegEx
