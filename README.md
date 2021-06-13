@@ -4,7 +4,7 @@ Blazor Input Mask
 
 11-19-2020 : Upgraded to .NET 5 - DEPRECATED PARAMETER: ValidateOnKeyPress
 
-Nuget Package : 
+Nuget Package : https://www.nuget.org/packages/BlazorInputMask/
 
 Install-Package BlazorInputMask
 
