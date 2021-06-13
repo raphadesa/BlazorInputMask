@@ -4,7 +4,7 @@ Blazor Input Mask
 
 11-19-2020 : Upgraded to .NET 5 - DEPRECATED PARAMETER: ValidateOnKeyPress
 
-Nuget Package : 
+Nuget Package : https://www.nuget.org/packages/BlazorInputMask/
 
 Install-Package BlazorInputMask
 
@@ -27,3 +27,9 @@ You can also have the possibility to set an id to the mask (optional), and also 
 Additional help in the demo code here : 
 
 https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
+
+06-13-2021 : New parameter added: isRegEx
+                                               
+Usage :
+                                               
+<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="^\d+$" isRegEx="true" placeholder="Phone No" />
