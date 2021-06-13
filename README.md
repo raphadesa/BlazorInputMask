@@ -2,6 +2,8 @@ Blazor Input Mask
 
 ![](https://71dhfa.am.files.1drv.com/y4mg_oke1rtEzv6OK0aeJHVm9oiTMPcv9SdNA2wSo7ppyzfpT_809MDNljRRP0NUNIAd0uTfkOPhLN8OP2FitMwxV2QoaYEcku1LIRKReqj5gCEQXfCqHPvzEM5z-URuqngkwnV9P6JwLEpO_XA5CBj_yLUk9qcCjjHcYOb50i-QiO2s7M8fAAqf0_MM8HlwBbJQ5rB3YDpLVrvcf47Z7Td0g/BlazorInputMask.gif?psid=1)
 
+11-19-2020 : Upgraded to .NET 5 - DEPRECATED PARAMETER: ValidateOnKeyPress
+
 Nuget Package : 
 
 Install-Package BlazorInputMask
