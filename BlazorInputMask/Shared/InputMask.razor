@@ -7,8 +7,6 @@
     public string id { get; set; }
     [Parameter]
     public string rawValue { get; set; }
-    [Parameter]
-    public bool isRegEx { get; set; }
     protected override void OnInitialized()
     {
         if (string.IsNullOrEmpty(id))
@@ -17,8 +15,12 @@
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
-        { 
-          await JSRuntime.InvokeVoidAsync("mask", id, AdditionalAttributes["data-mask"].ToString(), isRegEx, DotNetObjectReference.Create(this));
+        {
+            var pattern = AdditionalAttributes["data-mask"].ToString();
+            var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
+            if (isRegEx)
+                pattern = pattern.TrimStart('/').TrimEnd('/');
+            await JSRuntime.InvokeVoidAsync("mask", id,pattern, isRegEx, DotNetObjectReference.Create(this));
         }
     }
     protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
