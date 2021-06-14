@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime JSRuntime
 @inherits InputBase<string>
-<input id="@id" @attributes="AdditionalAttributes" class="@CssClass" @bind="CurrentValueAsString" />
+<input id="@id" @attributes="AdditionalAttributes" class="@CssClass" value="@CurrentValue" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" />
 
 @code {
     [Parameter]
