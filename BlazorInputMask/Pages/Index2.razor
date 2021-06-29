@@ -1,0 +1,54 @@
+﻿@page "/IndexV2"
+<h1>Simple validation on field change</h1>
+@if (!wasSubmitted)
+{
+
+    <EditForm EditContext="editContext">
+
+        <div class="form-group">
+            <label>First Name:</label>
+            <InputText @bind-Value="user.Name" class="form-control" placeholder="First Name" />
+        </div>
+
+        <div class="form-group">
+            <label>French Phone no:</label>
+            <InputMask @ref="mask" id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" placeholder="Phone No" />
+        </div>
+        <button type="submit" class="btn btn-primary">OK</button>
+        <ValidationSummary />
+        <DataAnnotationsValidator />
+    </EditForm>
+}
+else
+{
+    <div class="alert alert-success" role="alert">
+        Form was submitted successfully !
+    </div>
+}
+
+
+@code{
+
+    private User user = new User();
+    EditContext editContext { get; set; }
+    InputMask mask { get; set; }
+    private bool wasSubmitted { get; set; }
+    public string maskedOnly { get; set; }
+    protected override void OnInitialized()
+    {
+        editContext = new EditContext(user);
+        editContext.OnFieldChanged += HandleFieldChanged;
+
+    }
+
+    private void HandleFieldChanged(object sender, FieldChangedEventArgs e)
+    {
+        var isValid = editContext.Validate();
+        if (isValid)
+            wasSubmitted = true;
+
+
+    }
+}
+
+
