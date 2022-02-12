@@ -1,4 +1,4 @@
-﻿window.mask = (id, mask, isRegEx, dotnetHelper) => {
+﻿window.mask = (id, mask, isRegEx, returnRawValue, dotnetHelper) => {
     var pattern;    
     if (isRegEx)
         pattern = new RegExp(mask);
@@ -8,7 +8,11 @@
         document.getElementById(id), {
         mask: pattern,
             commit: function (value, masked) {
-                dotnetHelper.invokeMethodAsync('returnUnmaskedValue', this.unmaskedValue);                    
+                if (returnRawValue===true)                    
+                    dotnetHelper.invokeMethodAsync('returnCurrentValue', this.unmaskedValue);
+                else
+                    dotnetHelper.invokeMethodAsync('returnCurrentValue', value);
+                    
             }
     });
 };

@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label>French Phone no:</label>
-            <InputMask @ref="mask" id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00"  placeholder="Phone No" validateOnKeyPress="false"   />
+            <InputMask @ref="mask" id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00"  placeholder="Phone No" validateOnKeyPress="false" returnRawValue="true"  />
         </div>
         <button type="submit" class="btn btn-primary">OK</button>
         <ValidationSummary />
@@ -23,19 +23,21 @@ else
 {
     <div class="alert alert-success" role="alert">
         Form was submitted successfully !
+        Here is the raw value : @rawValue
     </div>
 }
 
 
 @code{
 
-    private User user = new User();
+    User user = new User();
     InputMask mask { get; set; }
-    private bool wasSubmitted { get; set; }
-    public string maskedOnly { get; set; }
+    bool wasSubmitted { get; set; }
+    string maskedOnly { get; set; }
+    string rawValue { get; set; }
     private void Submit()
     {
-        var rawValue = mask.rawValue;
+        rawValue = mask.returnValue;
         wasSubmitted = true;        
     }
 
