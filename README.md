@@ -38,7 +38,7 @@ Usage : (RegEx must start and end with a slash '/')
                                                                                                                              
 Warning: now return value parameter is not rawValue but returnValue.
                                                                                                                            
-                                                                                                                              
+ "This project is licensed under the terms of the MIT license."                                                                                                                      
                                                                                                                               
                                                                                                       
                                                                                                        
