@@ -37,8 +37,7 @@ Usage : (RegEx must start and end with a slash '/')
 02-12-22 : Added new parameter returnRawValue true by default
                                                                                                                              
 Warning: now return value parameter is not rawValue but returnValue.
-                                                                                                                           
- "This project is licensed under the terms of the MIT license."                                                                                                                      
+                                                                                                                   
                                                                                                                               
                                                                                                       
                                                                                                        
