@@ -1,0 +1,23 @@
+﻿@page "/Index3"
+@inject MaskService maskService
+<h3>Mask3</h3>
+
+
+<InputMask @ref="inputMask" id="test" @bind-Value="value" class="form-control" placeholder="Phone No" validateOnKeyPress="false"  />
+
+<button class="btn btn-primary" @onclick="setMask">Set Random Mask Dynamically</button>
+
+<div>Current mask :@mask</div>
+
+@code {
+    string value { get; set; }
+    string mask { get; set; }
+    InputMask inputMask { get; set; }
+    async Task setMask()
+    {
+        var rand = new Random();
+        var repeat = rand.Next(1,5);
+        mask =string.Concat(System.Linq.Enumerable.Repeat("00.",repeat)).TrimEnd('.');
+        await inputMask.updateMask(mask);
+    }
+}

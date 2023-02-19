@@ -1,10 +1,16 @@
-﻿window.mask = (id, mask, isRegEx, returnRawValue, dotnetHelper) => {
+﻿
+var customMask = null;
+
+window.mask = (id, mask, isRegEx, returnRawValue, dotnetHelper) => {    
     var pattern;    
     if (isRegEx)
         pattern = new RegExp(mask);
     else
-        pattern = mask;    
-    var customMask = IMask(
+        pattern = mask;
+    if (customMask != null) {
+        customMask.destroy();
+    }    
+    customMask = IMask(
         document.getElementById(id), {
         mask: pattern,
             commit: function (value, masked) {

@@ -1,3 +1,4 @@
+using BlazorInputMask;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
