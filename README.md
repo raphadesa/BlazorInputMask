@@ -35,6 +35,10 @@ Usage : (RegEx must start and end with a slash '/')
 <InputMask @bind-Value="user.Telephone" class="form-control" data-mask="/^\d+$/" placeholder="Phone No" returnRawValue="false" />
 
 02-12-22 : Added new parameter returnRawValue true by default
+                                                                                                                             
+Warning: now return value parameter is not rawValue but returnValue.
+                                                                                                                   
+                                                                                                                              
                                                                                                       
                                                                                                        
                                                                                                        
