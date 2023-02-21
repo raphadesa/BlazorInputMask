@@ -38,7 +38,7 @@ Usage : (RegEx must start and end with a slash '/')
                                                                                                                              
 Warning: now return value parameter is not rawValue but returnValue.
                                                                                                                    
-                                                                                                                              
+02-21-2023 : Added function updateMask                                                                                                                              
                                                                                                       
                                                                                                        
                                                                                                        
