@@ -44,12 +44,7 @@ Warning: now return value parameter is not rawValue but returnValue.
  
 New event has been added: OnChange, which returns both value and the masked raw value.
 
-So you don't need to use returnRawValue anymore.
-
-See here for more info :
-
-https://github.com/raphadesa/BlazorInputMask/blob/master/BlazorInputMask/Pages/Index.razor
-                                                                                                       
+So you don't need to use returnRawValue anymore.                                                                                                   
                                                                                                        
                                                                                                        
                                                                                                        
