@@ -1,13 +1,13 @@
 ﻿
 var customMask = null;
 
-window.mask = (id, mask, isRegEx, returnRawValue, dotnetHelper) => {    
+window.mask = (id, mask, isRegEx, returnRawValue, destroy, dotnetHelper) => {    
     var pattern;    
     if (isRegEx)
         pattern = new RegExp(mask);
     else
         pattern = mask;
-    if (customMask != null) {
+    if (customMask != null && destroy) {
         customMask.destroy();
     }    
     customMask = IMask(

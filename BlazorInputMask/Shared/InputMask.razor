@@ -35,7 +35,7 @@ else
                 var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
                 if (isRegEx)
                     pattern = pattern.TrimStart('/').TrimEnd('/');
-                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, DotNetObjectReference.Create(this));
+                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, false,DotNetObjectReference.Create(this));
             }
         }
     }
@@ -57,7 +57,7 @@ else
         var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
         if (isRegEx)
             pattern = pattern.TrimStart('/').TrimEnd('/');
-        await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, DotNetObjectReference.Create(this));
+        await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, true, DotNetObjectReference.Create(this));
     }
  }
 
