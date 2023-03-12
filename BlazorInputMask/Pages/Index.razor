@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label>French Phone no:</label>
-            <InputMask id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChange="@inputChanged" placeholder="Phone No" validateOnKeyPress="false" returnRawValue="true"  />
+            <InputMask id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChange="OnMaskChanged" placeholder="Phone No" validateOnKeyPress="false"  />
         </div>
         <button type="submit" class="btn btn-primary">OK</button>
         <ValidationSummary />
@@ -34,7 +34,7 @@ else
     bool wasSubmitted { get; set; }
     string maskedOnly { get; set; }
     string rawValue { get; set; }
-    private void inputChanged(InputChanges input)
+    private void OnMaskChanged(InputChanged input)
     {
         rawValue = input.unMaskedValue;
     }

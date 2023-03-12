@@ -16,7 +16,7 @@ else
     [Parameter]
     public string id { get; set; }                    
     [Parameter]
-    public EventCallback<InputChanges> OnChange { get; set; }        
+    public EventCallback<InputChanged> OnChange { get; set; }        
     [Parameter]
     public bool validateOnKeyPress { get; set; } = true;
     protected override void OnInitialized()
@@ -41,7 +41,7 @@ else
     }
 
     [JSInvokable]
-    public InputChanges returnValue(InputChanges value)
+    public InputChanged returnValue(InputChanged value)
     {
         if (!string.IsNullOrEmpty(value.value))        
             OnChange.InvokeAsync(value);
