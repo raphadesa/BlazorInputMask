@@ -1,7 +1,8 @@
 ﻿
 var customMask = null;
 
-window.mask = (id, mask, isRegEx, returnRawValue, destroy, dotnetHelper) => {    
+window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
+    debugger;
     var pattern;    
     if (isRegEx)
         pattern = new RegExp(mask);
@@ -13,13 +14,10 @@ window.mask = (id, mask, isRegEx, returnRawValue, destroy, dotnetHelper) => {
     customMask = IMask(
         document.getElementById(id), {
         mask: pattern,
-            commit: function (value, masked) {
-                if (returnRawValue===true)                    
-                    dotnetHelper.invokeMethodAsync('returnCurrentValue', this.unmaskedValue);
-                else
-                    dotnetHelper.invokeMethodAsync('returnCurrentValue', value);
-                    
-            }
+        commit: function (value, masked) {
+            var vm = { value:value, unMaskedValue:this.unmaskedValue };
+            dotnetHelper.invokeMethodAsync('returnValue', vm);
+        }
     });
 };
 

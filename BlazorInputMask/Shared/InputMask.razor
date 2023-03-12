@@ -10,15 +10,15 @@ else
     <input id="@id" @attributes="AdditionalAttributes" class="@CssClass" @bind="CurrentValueAsString" />
 }
 
+
 @code {
+
     [Parameter]
-    public string id { get; set; }
+    public string id { get; set; }                    
     [Parameter]
-    public string returnValue { get; set; }
+    public EventCallback<InputChanges> OnChange { get; set; }        
     [Parameter]
     public bool validateOnKeyPress { get; set; } = true;
-    [Parameter]
-    public bool returnRawValue { get; set; } = true;
     protected override void OnInitialized()
     {
         if (string.IsNullOrEmpty(id))
@@ -35,29 +35,33 @@ else
                 var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
                 if (isRegEx)
                     pattern = pattern.TrimStart('/').TrimEnd('/');
-                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, false,DotNetObjectReference.Create(this));
+                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, false,DotNetObjectReference.Create(this));
             }
         }
+    }
+
+    [JSInvokable]
+    public InputChanges returnValue(InputChanges value)
+    {
+        if (!string.IsNullOrEmpty(value.value))        
+            OnChange.InvokeAsync(value);
+        return value;
+
     }
     protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
     {
         result = value;
         validationErrorMessage = null;
         return true;
-    }
+    }    
 
-    [JSInvokable]
-    public void returnCurrentValue(string value)
-    {
-        returnValue = value;
-    }
     public async Task updateMask(string mask)
     {
         var pattern = mask.ToString();
         var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
         if (isRegEx)
             pattern = pattern.TrimStart('/').TrimEnd('/');
-        await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, returnRawValue, true, DotNetObjectReference.Create(this));
+        await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, true, DotNetObjectReference.Create(this));
     }
  }
 
