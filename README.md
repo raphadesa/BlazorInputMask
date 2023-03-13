@@ -12,7 +12,7 @@ Use like that:
 
 <EditForm Model="..
 
-<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChange="..." placeholder="Phone No" />
+<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChanged="..." placeholder="Phone No" />
 
 In your _Host.cshtml or Index.html file:
 
