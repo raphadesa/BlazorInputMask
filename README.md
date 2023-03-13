@@ -42,7 +42,7 @@ Warning: now return value parameter is not rawValue but returnValue.
                                                                                                       
 03-12-2023 : BREAKING CHANGE
  
-New event has been added: OnChange, which returns both value and the masked raw value.
+New event has been added: OnChanged, which returns both value and the masked raw value.
 
 So you don't need to use returnRawValue anymore.                                                                                                   
                                                                                                        
