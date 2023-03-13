@@ -1,8 +1,7 @@
 ﻿
 var customMask = null;
 
-window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
-    debugger;
+window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {    
     var pattern;    
     if (isRegEx)
         pattern = new RegExp(mask);
