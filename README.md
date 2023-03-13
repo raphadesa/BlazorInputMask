@@ -12,7 +12,7 @@ Use like that:
 
 <EditForm Model="..
 
-<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" placeholder="Phone No" />
+<InputMask @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChange="..." placeholder="Phone No" />
 
 In your _Host.cshtml or Index.html file:
 
@@ -40,8 +40,11 @@ Warning: now return value parameter is not rawValue but returnValue.
                                                                                                                    
 02-21-2023 : Added function updateMask                                                                                                                              
                                                                                                       
-                                                                                                       
-                                                                                                       
+03-12-2023 : BREAKING CHANGE
+ 
+New event has been added: OnChange, which returns both value and the masked raw value.
+
+So you don't need to use returnRawValue anymore.                                                                                                   
                                                                                                        
                                                                                                        
                                                                                                        
