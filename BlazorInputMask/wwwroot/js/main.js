@@ -2,15 +2,14 @@
 var customMask = null;
 
 window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
-    debugger;
-    var pattern;    
+    var pattern;
     if (isRegEx)
         pattern = new RegExp(mask);
     else
         pattern = mask;
     if (customMask != null && destroy) {
         customMask.destroy();
-    }    
+    }
     customMask = IMask(
         document.getElementById(id), {
         mask: pattern,
@@ -20,4 +19,3 @@ window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
         }
     });
 };
-
