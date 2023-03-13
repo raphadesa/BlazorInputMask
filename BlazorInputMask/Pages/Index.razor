@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label>French Phone no:</label>
-            <InputMask id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChange="OnMaskChanged" placeholder="Phone No" validateOnKeyPress="false"  />
+            <InputMask id="test" @bind-Value="user.Telephone" class="form-control" data-mask="00.00.00.00.00" OnChanged="OnMaskChanged" placeholder="Phone No" validateOnKeyPress="false"  />
         </div>
         <button type="submit" class="btn btn-primary">OK</button>
         <ValidationSummary />
