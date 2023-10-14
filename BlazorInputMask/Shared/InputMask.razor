@@ -63,6 +63,12 @@ else
             pattern = pattern.TrimStart('/').TrimEnd('/');
         await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, true, DotNetObjectReference.Create(this));
     }
+
+    public async Task clearValue()
+    {
+        CurrentValue = null;
+        await JSRuntime.InvokeVoidAsync("clearValue");
+    }
  }
 
 

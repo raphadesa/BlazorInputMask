@@ -19,3 +19,8 @@ window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
         }
     });
 };
+
+window.clearValue = () => {        
+    customMask.masked.reset();    
+};
+

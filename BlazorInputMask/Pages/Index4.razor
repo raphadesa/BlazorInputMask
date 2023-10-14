@@ -1,0 +1,19 @@
+﻿@using BlazorInputMask
+@page "/Test"
+
+<InputMask @ref="inputMask" id="test" @bind-Value="value" class="form-control" data-mask="00.00.00.00.00" placeholder="Phone No" validateOnKeyPress=false />
+
+<button class="btn btn-primary" @onclick="Clear">Clear</button>
+<div>Current mask @mask</div>
+
+
+@code {
+    string value { get; set; }
+    string mask { get; set; }
+    InputMask inputMask { get; set; }
+   async Task Clear()
+    {
+      await inputMask.clearValue();
+      StateHasChanged();
+    }
+}
