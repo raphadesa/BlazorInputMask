@@ -45,6 +45,8 @@ Warning: now return value parameter is not rawValue but returnValue.
 New event has been added: OnChanged, which returns both value and the masked raw value.
 
 So you don't need to use returnRawValue anymore.                                                                                                   
+
+10-14-2023 : Added function clearValue
                                                                                                        
                                                                                                        
                                                                                                        
