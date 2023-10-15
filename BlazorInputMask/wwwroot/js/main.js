@@ -20,7 +20,16 @@ window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
     });
 };
 
-window.clearValue = () => {        
-    customMask.masked.reset();    
+window.clearValue = (id, mask, isRegEx) => {
+    var pattern;
+    if (isRegEx)
+        pattern = new RegExp(mask);
+    else
+        pattern = mask;
+    var tmpMask = IMask(
+        document.getElementById(id), {
+        mask: pattern
+    });
+    tmpMask.masked.reset();    
 };
 

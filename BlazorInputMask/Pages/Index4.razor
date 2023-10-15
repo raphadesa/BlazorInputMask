@@ -2,6 +2,7 @@
 @page "/Index4"
 
 <InputMask @ref="inputMask" id="test" @bind-Value="value" class="form-control" data-mask="00.00.00.00.00" placeholder="Phone No" validateOnKeyPress=false />
+<InputMask @ref="inputMask2" id="test2" @bind-Value="value2" class="form-control" data-mask="00.00.00.00.00" placeholder="Phone No" validateOnKeyPress=false />
 
 <button class="btn btn-primary" @onclick="Clear">Clear</button>
 <div>Current mask @mask</div>
@@ -9,11 +10,14 @@
 
 @code {
     string value { get; set; }
+    string value2 { get; set; }
     string mask { get; set; }
     InputMask inputMask { get; set; }
+    InputMask inputMask2 { get; set; }
    async Task Clear()
     {
       await inputMask.clearValue();
+      await inputMask2.clearValue();
       StateHasChanged();
     }
 }
