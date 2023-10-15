@@ -14,9 +14,9 @@ else
 @code {
 
     [Parameter]
-    public string id { get; set; }                    
+    public string id { get; set; }
     [Parameter]
-    public EventCallback<InputChanged> OnChanged { get; set; }        
+    public EventCallback<InputChanged> OnChanged { get; set; }
     [Parameter]
     public bool validateOnKeyPress { get; set; } = true;
     protected override void OnInitialized()
@@ -35,7 +35,7 @@ else
                 var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
                 if (isRegEx)
                     pattern = pattern.TrimStart('/').TrimEnd('/');
-                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, false,DotNetObjectReference.Create(this));
+                await JSRuntime.InvokeVoidAsync("mask", id, pattern, isRegEx, false, DotNetObjectReference.Create(this));
             }
         }
     }
@@ -43,7 +43,7 @@ else
     [JSInvokable]
     public InputChanged returnValue(InputChanged value)
     {
-        if (!string.IsNullOrEmpty(value.value))        
+        if (!string.IsNullOrEmpty(value.value))
             OnChanged.InvokeAsync(value);
         return value;
 
@@ -53,7 +53,7 @@ else
         result = value;
         validationErrorMessage = null;
         return true;
-    }    
+    }
 
     public async Task updateMask(string mask)
     {
@@ -67,17 +67,10 @@ else
     public async Task clearValue()
     {
         CurrentValue = null;
-        object mask = null;
-        if (AdditionalAttributes.TryGetValue("data-mask", out mask))
-        {
-            var pattern = mask.ToString();
-            var isRegEx = pattern.StartsWith("/") && pattern.EndsWith("/");
-            if (isRegEx)
-                pattern = pattern.TrimStart('/').TrimEnd('/');
-            await JSRuntime.InvokeVoidAsync("clearValue", id, pattern, isRegEx);
-        }
+        await JSRuntime.InvokeVoidAsync("clearValue", id);
+
     }
- }
+}
 
 
 

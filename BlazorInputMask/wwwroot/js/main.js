@@ -1,7 +1,10 @@
 ﻿
 var customMask = null;
+var dictionary = new Map();
 
 window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
+
+    customMask = dictionary.get(id);
     var pattern;
     if (isRegEx)
         pattern = new RegExp(mask);
@@ -18,18 +21,11 @@ window.mask = (id, mask, isRegEx, destroy, dotnetHelper) => {
             dotnetHelper.invokeMethodAsync('returnValue', vm);
         }
     });
+    dictionary.set(id, customMask);
 };
 
-window.clearValue = (id, mask, isRegEx) => {
-    var pattern;
-    if (isRegEx)
-        pattern = new RegExp(mask);
-    else
-        pattern = mask;
-    var tmpMask = IMask(
-        document.getElementById(id), {
-        mask: pattern
-    });
-    tmpMask.masked.reset();    
+window.clearValue = (id) => {
+    customMask = dictionary.get(id);
+    customMask.masked.reset();
 };
 
